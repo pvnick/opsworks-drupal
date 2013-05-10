@@ -1,0 +1,14 @@
+{
+    "drupal": {
+        "database": {
+            "username": "drupal-user",
+            "password": "drupal-pass",
+            "database_name": "drupal-db"
+        }
+    },
+    "mysql": {
+        "hostname": "monolithic-db.cndboniumeav.us-east-1.rds.amazonaws.com",
+        "master_username": "wear-root",
+        "master_password": "rD$mast3r"
+    }
+}
