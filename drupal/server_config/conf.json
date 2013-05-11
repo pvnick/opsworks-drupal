@@ -1,14 +1,16 @@
 {
-    "drupal": {
-        "database": {
-            "username": "drupal_user",
-            "password": "drupal_pass",
-            "database_name": "drupal_db"
+    "adhoc_settings": {
+        "drupal": {
+            "database": {
+                "username": "drupal_user",
+                "password": "drupal_pass",
+                "database_name": "drupal_db"
+            }
+        },
+        "mysql": {
+            "hostname": "monolithic-db.cndboniumeav.us-east-1.rds.amazonaws.com",
+            "master_username": "wear_root",
+            "master_password": "rD$mast3r"
         }
-    },
-    "mysql": {
-        "hostname": "monolithic-db.cndboniumeav.us-east-1.rds.amazonaws.com",
-        "master_username": "wear_root",
-        "master_password": "rD$mast3r"
     }
 }
