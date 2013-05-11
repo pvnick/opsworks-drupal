@@ -22,9 +22,11 @@ template "Grant privileges to mysql account for app db" do
     notifies :run, resources(:execute => "mysql-create-db-and-grant-privs"), :immediately
 end
 
-git "/tmp/drupal-checkout" do
+scm "Download drupal" do
+    provider Chef::Provider::Git
     repository default[:general_settings][:drupal][:repo_url]
     revision default[:general_settings][:drupal][:repo_branch]
+    destination "/tmp/drupal-checkout"
     action :checkout
 
     #not_if do
