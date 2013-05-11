@@ -22,11 +22,14 @@ template "Grant privileges to mysql account for app db" do
     notifies :run, resources(:execute => "mysql-create-db-and-grant-privs"), :immediately
 end
 
-git "Checkout repository" do
-    action :checkout
-    destination "/tmp/drupal-checkout"
+git "/tmp/drupal-checkout" do
     repository default[:general_settings][:drupal][:repo_url]
     revision default[:general_settings][:drupal][:repo_branch]
+    action :checkout
+
+    #not_if do
+    #    ::File.directory?("/tmp/drupal-checkout")
+    #end
 end
 #execute "Ensure correct permissions" do
 #  command "chmod -R go-rwx #{node[:opsworks_custom_cookbooks][:destination]}"
